@@ -15,7 +15,18 @@ public class Cpit252_Project {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        AbstractFactory fabricFactory = FactoryProducer.getFactory("Fabric");
+        
+        Fabric fabric1 = fabricFactory.getFabric("COTTON");
+        System.out.println(fabric1.getPrice()+" "+fabric1.getMaterial());
+        
+        AbstractFactory garmentFactory = FactoryProducer.getFactory("garment");
+        
+        Garment garment1 = garmentFactory.getGarment("DRESS");
+        System.out.println(garment1.getPrice()+" "+garment1.getType());
+        
+        //add customer
+        new addCustomer();
     }
     
 }
