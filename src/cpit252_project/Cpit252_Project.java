@@ -25,8 +25,6 @@ public class Cpit252_Project {
         Garment garment1 = garmentFactory.getGarment("DRESS");
         System.out.println(garment1.getPrice()+" "+garment1.getType());
         
-        //add customer
-        new addCustomer();
     }
     
 }
