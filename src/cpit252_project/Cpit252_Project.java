@@ -17,16 +17,17 @@ public class Cpit252_Project {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        AbstractFactory fabricFactory = FactoryProducer.getFactory("Fabric");
         
-        Fabric fabric1 = fabricFactory.getFabric("COTTON");
-        System.out.println(fabric1.getPrice()+" "+fabric1.getMaterial());
         
-        AbstractFactory garmentFactory = FactoryProducer.getFactory("garment");
+        //-------------------------
+        //Facade
         
-        Garment garment1 = garmentFactory.getGarment("DRESS");
-        System.out.println(garment1.getPrice()+" "+garment1.getType());
+        CustomerService customerService = new CustomerService(); 
         
+        TailorSystemFacade TailorSystemFacade = new TailorSystemFacade(customerService);
+        TailorSystemFacade.addCustomer(); //add customer service
+        
+        //-------------------------
         
         Scanner input = new Scanner(System.in);
         System.out.println("Please enter your password to log in:");
