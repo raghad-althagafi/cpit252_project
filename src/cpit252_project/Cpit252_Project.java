@@ -5,6 +5,8 @@
  */
 package cpit252_project;
 
+import java.util.Scanner;
+
 /**
  *
  * @author AHC
@@ -24,6 +26,13 @@ public class Cpit252_Project {
         
         Garment garment1 = garmentFactory.getGarment("DRESS");
         System.out.println(garment1.getPrice()+" "+garment1.getType());
+        
+        
+        Scanner input = new Scanner(System.in);
+        System.out.println("Please enter your password to log in:");
+        String password = input.next();
+        Login login = new proxyLogin(password);
+        login.login();
         
     }
     
