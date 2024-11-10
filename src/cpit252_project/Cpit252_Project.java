@@ -25,15 +25,11 @@ public class Cpit252_Project {
         CustomerService customerService = new CustomerService(); 
         
         TailorSystemFacade TailorSystemFacade = new TailorSystemFacade(customerService);
-        TailorSystemFacade.addCustomer(); //add customer service
+        //TailorSystemFacade.addCustomer(); //add customer service
+        //TailorSystemFacade.login();
         
         //-------------------------
         
-        Scanner input = new Scanner(System.in);
-        System.out.println("Please enter your password to log in:");
-        String password = input.next();
-        Login login = new proxyLogin(password);
-        login.login();
         
     }
     

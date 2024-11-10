@@ -31,7 +31,8 @@ public class proxyLogin implements Login {
             login.login();
         }
         else{
-            System.out.println("Incorrect password. Please try again.");
+            System.out.println("Incorrect password.");
+            System.exit(0);
         }
      }
     }
