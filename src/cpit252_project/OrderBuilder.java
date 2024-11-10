@@ -13,7 +13,7 @@ public interface OrderBuilder {
     public OrderBuilder buildCustomer(Customer customer);
     public OrderBuilder buildGarment(String garmentType);
     public OrderBuilder buildFabric(String fabricType);
-    public OrderBuilder buildDate(Delivery_Date date);
+    public OrderBuilder buildDate(CalculateDate date);
     public OrderBuilder calculatePrice();
     public Order buildOrder();
 }

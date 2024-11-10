@@ -20,7 +20,7 @@ public class OrderDirector {
         return this.orderBuilder.buildOrder();
     }
 
-    public Order makeOrder(Customer customer, String fabric, String garment, Delivery_Date date){
+    public Order makeOrder(Customer customer, String fabric, String garment, CalculateDate date){
         this.orderBuilder.buildCustomer(customer);
         this.orderBuilder.buildFabric(fabric);
         this.orderBuilder.buildGarment(garment);

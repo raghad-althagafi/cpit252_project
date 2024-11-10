@@ -11,10 +11,19 @@ import cpit252_project.PricingStrategy;
  * @author basma
  */
 public class UrgentPricingStrategy implements PricingStrategy {
+private final RushDateDecorator deliveryDecorator;
 
+    public UrgentPricingStrategy(RushDateDecorator deliveryDecorator) {
+        this.deliveryDecorator = deliveryDecorator;
+    }
     @Override
     public double calculatePrice(String garmentType, double meter, String fabricType) {
         double basePrice = new StandardPricingStrategy().calculatePrice(garmentType, meter, fabricType);
-        return basePrice * 1.15; // 15% additional charge for urgent orders
+       
+        if (deliveryDecorator.isUrgent()) {
+            return basePrice * 1.15; // 15% additional charge for urgent orders
+        }
+         return basePrice;
+
     }
 }

@@ -49,7 +49,7 @@ public class Order {
         this.garment = garment;
     }
 
-    public void setTime(Delivery_Date time) {
+    public void setTime(CalculateDate time) {
         this.time = time;
     }
 
@@ -62,7 +62,7 @@ public class Order {
         return customer;
     }
 
-    public Delivery_Date getTime() {
+    public CalculateDate getTime() {
         return time;
     }
 
@@ -86,7 +86,7 @@ public class Order {
                 "Garment Type:          " + garment.getType() + "\n" +
                 "Fabric Type:           " + fabric.getMaterial() + "\n" +
 //                "Total price:           " + customer.checkDiscount(customer, price.getPrice()) + "\n" +
-                "Delivery Time:         " + time.getDelivery_date() + "\n"+
+                "Delivery Time:         " + time.getCalculateDate() + "\n"+
                 "===============================";
     }
 }

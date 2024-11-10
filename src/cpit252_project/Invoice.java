@@ -42,7 +42,7 @@ public class Invoice implements OrderBuilder{
     }
 
     @Override
-    public OrderBuilder buildDate(Delivery_Date date) {
+    public OrderBuilder buildDate(CalculateDate date) {
         order.setTime(date);
         return this;
     }
