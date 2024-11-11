@@ -12,52 +12,27 @@ import cpit252_project.PricingStrategy;
  * @author basma
  */
 public class StandardPricingStrategy implements PricingStrategy {
-    
+
+    private GarmentFactory garmentFactory;
+    private FabricFactory fabricFactory;
+
+    public StandardPricingStrategy() {
+        this.garmentFactory = new GarmentFactory();
+        this.fabricFactory = new FabricFactory();
+    }
+
     @Override
     public double calculatePrice(String garmentType, double meter, String fabricType) {
-        int garmentCost = getGarmentCost(garmentType);
-        int fabricCost = getFabricCost(fabricType);
+        Garment garment = garmentFactory.getGarment(garmentType);
+        Fabric fabric = fabricFactory.getFabric(fabricType);
+
+        if (garment == null || fabric == null) {
+            throw new IllegalArgumentException("Invalid garment or fabric type.");
+        }
+
+        double garmentCost = garment.getPrice();
+        double fabricCost = fabric.getPrice();
         
-        if (fabricCost < 0) {
-            throw new IllegalArgumentException("Fabric not found.");
-        }
-
         return garmentCost + (fabricCost * meter);
-    }
-
-    // Returns the base cost of the garment based on its type
-    private int getGarmentCost(String garmentType) {
-        switch (garmentType.toLowerCase()) {
-            case "dress":
-                return 200;
-            case "blouse":
-                return 50;
-            case "skirt":
-                return 100;
-            default:
-                throw new IllegalArgumentException("Invalid garment type.");
-        }
-    }
-
-    // Returns the cost per meter of the fabric based on its type
-    private int getFabricCost(String fabricType) {
-        switch (fabricType.toLowerCase()) {
-            case "crepe":
-            case "satin":
-            case "denim":
-                return 20;
-            case "polyester":
-            case "linen":
-            case "chiffon":
-                return 15;
-            case "leather":
-            case "cotton":
-            case "silk":
-                return 30;
-            case "tulle":
-                return 10;
-            default:
-                return -1; // Return -1 if the fabric type is not found
-        }
     }
 }

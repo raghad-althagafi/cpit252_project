@@ -9,7 +9,7 @@ package cpit252_project;
  * @author basma
  */
 public class PriceContext {
-    private PricingStrategy strategy;
+   private PricingStrategy strategy;
 
     public PriceContext(PricingStrategy strategy) {
         this.strategy = strategy;
