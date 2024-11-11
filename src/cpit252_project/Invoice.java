@@ -5,20 +5,24 @@
  */
 package cpit252_project;
 
+import java.time.LocalDate;
+
 /**
  *
  * @author shaha
  */
-public class Invoice implements OrderBuilder{
+public class Invoice implements OrderBuilder {
 
     private Order order;
     private final AbstractFactory garmentFactory;
     private final AbstractFactory fabricFactory;
+//    private final PriceContext priceContext;
 
     public Invoice() {
         this.order = new Order();
         this.garmentFactory = FactoryProducer.getFactory("garment");
         this.fabricFactory = FactoryProducer.getFactory("Fabric");
+//        this.priceContext = new PriceContext(new StandardPricingStrategy());
     }
 
     @Override
@@ -29,7 +33,7 @@ public class Invoice implements OrderBuilder{
 
     @Override
     public OrderBuilder buildGarment(String garmentType) {
-        Garment garment = garmentFactory.getGarment("garmentType");
+        Garment garment = garmentFactory.getGarment(garmentType);
         order.setGarment(garment);
         return this;
     }
@@ -42,22 +46,26 @@ public class Invoice implements OrderBuilder{
     }
 
     @Override
-    public OrderBuilder buildDate(CalculateDate date) {
+    public OrderBuilder buildDate(LocalDate date) {
         order.setTime(date);
         return this;
     }
 
     @Override
-    public OrderBuilder calculatePrice() {
-        //order.setTotalPrice(order.getCustomer().checkDiscount(order.getCustomer(), .getPrice()));
+    public OrderBuilder buildPrice(double price) {
+        order.setTotalPrice(order.getCustomer().checkDiscount(order.getCustomer(), price));
+        //order.setTotalPrice( price);
+
+//        order.setTotalPrice(priceContext.executePricingStrategy(order.getGarment().getType(), meter, order.getFabric().getMaterial()));
+        //order.setTotalPrice(order.getCustomer().checkDiscount(order.getCustomer(), priceContext.executePricingStrategy(order.getGarment().getType(), meter, order.getFabric().getMaterial())));
         return this;
     }
 
     @Override
-    //to reuse the builder in the  do-while loop
     public Order buildOrder() {
         Order builtOrder = this.order;
-        this.order = new Order();
-        return builtOrder;
+        //this.order = new Order();
+        //return builtOrder;
+        return order;
     }
 }

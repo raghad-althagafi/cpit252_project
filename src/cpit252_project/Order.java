@@ -5,6 +5,8 @@
  */
 package cpit252_project;
 
+import java.time.LocalDate;
+
 /**
  *
  * @author shaha
@@ -13,20 +15,19 @@ public class Order {
     private static int OrderID =0;
     private double TotalPrice;
     private Customer customer;
-//    private Pricing price;
+    private double price;
     private Fabric fabric;
     private Garment garment;
-    private CalculateDate time;
+    private LocalDate time;
 
     //constructer
     public Order(){
         ++OrderID;
     }
-    public Order(double TotalPrice, Customer customer,  CalculateDate time) {
+    public Order(double TotalPrice, Customer customer,  LocalDate time) {
         ++OrderID;
         this.TotalPrice = TotalPrice;
         this.customer = customer;
-//        this.price = price;
         this.time = time;
     }
 
@@ -49,7 +50,7 @@ public class Order {
         this.garment = garment;
     }
 
-    public void setTime(CalculateDate time) {
+    public void setTime(LocalDate time) {
         this.time = time;
     }
 
@@ -62,7 +63,7 @@ public class Order {
         return customer;
     }
 
-    public CalculateDate getTime() {
+    public LocalDate getTime() {
         return time;
     }
 
@@ -85,8 +86,10 @@ public class Order {
                 "Customer Phone Number: " + customer.getPhoneNumber() + "\n" +
                 "Garment Type:          " + garment.getType() + "\n" +
                 "Fabric Type:           " + fabric.getMaterial() + "\n" +
-//                "Total price:           " + customer.checkDiscount(customer, price.getPrice()) + "\n" +
-                "Delivery Time:           "+
+//                "Total price:           " + customer.checkDiscount(customer, TotalPrice) + "\n" +
+                "Total price:           " + TotalPrice + "\n" +
+
+                "Delivery Time:         " +  time + "\n" +
                 "===============================";
     }
 }

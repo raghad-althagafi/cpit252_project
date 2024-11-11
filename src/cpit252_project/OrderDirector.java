@@ -5,27 +5,31 @@
  */
 package cpit252_project;
 
+import java.time.LocalDate;
+
 /**
  *
  * @author shaha
  */
 public class OrderDirector {
+
     private OrderBuilder orderBuilder;
 
     public OrderDirector(OrderBuilder orderBuilder) {
         this.orderBuilder = orderBuilder;
     }
 
-    public Order getOrder(){
+    public Order getOrder() {
         return this.orderBuilder.buildOrder();
     }
 
-    public Order makeOrder(Customer customer, String fabric, String garment, CalculateDate date){
-        this.orderBuilder.buildCustomer(customer);
-        this.orderBuilder.buildFabric(fabric);
-        this.orderBuilder.buildGarment(garment);
-        this.orderBuilder.calculatePrice();
-        this.orderBuilder.buildDate(date);
-        return this.orderBuilder.buildOrder();
+    public Order makeOrder(Customer customer, String fabric, String garment, LocalDate date, double price) {
+        return orderBuilder
+                .buildCustomer(customer)
+                .buildFabric(fabric)
+                .buildGarment(garment)
+                .buildPrice(price)
+                .buildDate(date)
+                .buildOrder();
     }
 }
