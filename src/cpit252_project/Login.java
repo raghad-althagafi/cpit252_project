@@ -10,5 +10,5 @@ package cpit252_project;
  * @author AHC
  */
 public interface Login {
-    void login();
+      TailorSystemFacade login();
 }

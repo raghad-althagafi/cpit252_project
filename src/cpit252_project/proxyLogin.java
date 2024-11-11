@@ -14,27 +14,33 @@ import java.util.Scanner;
 public class proxyLogin implements Login {
 
     private Login login;
+    private String username;
     private String Password;
-    private String CorrectPassword = "1234567";
+    //private String CorrectPassword = "1234567";
+    database db;
 
-    public proxyLogin(String Password) {
+    public proxyLogin(String Password,String username) {
         this.Password = Password;
+        this.username = username;
+        db = new database();
     }
 
     
    
 
     @Override
-    public void login() {        
-        if (Password.equals(CorrectPassword)){
-            login = new RealLogin(Password);
-            login.login();
+    public TailorSystemFacade login() {        
+        if (db.checkLogin(username, Password)){
+            login = new RealLogin();
+            return login.login();
         }
         else{
-            System.out.println("Incorrect password.");
-            System.exit(0);
+            System.out.println("user not fount or Incorrect password.");
+            return null;
         }
      }
+
+
     }
     
 

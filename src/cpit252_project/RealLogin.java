@@ -10,17 +10,18 @@ package cpit252_project;
  * @author AHC
  */
 public class RealLogin implements Login{
-     private String Password;
-
-    public RealLogin(String Password) {
-        this.Password = Password;
-    }
 
     @Override
-    public void login() {
+    public TailorSystemFacade login() {
         System.out.println("Welcome back");
+        return new TailorSystemFacade(new CustomerService());
 
     }
+
+   
+
+   
+    
      
 
     

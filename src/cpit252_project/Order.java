@@ -16,13 +16,13 @@ public class Order {
 //    private Pricing price;
     private Fabric fabric;
     private Garment garment;
-    private Delivery_Date time;
+    private CalculateDate time;
 
     //constructer
     public Order(){
         ++OrderID;
     }
-    public Order(double TotalPrice, Customer customer,  Delivery_Date time) {
+    public Order(double TotalPrice, Customer customer,  CalculateDate time) {
         ++OrderID;
         this.TotalPrice = TotalPrice;
         this.customer = customer;
@@ -86,7 +86,7 @@ public class Order {
                 "Garment Type:          " + garment.getType() + "\n" +
                 "Fabric Type:           " + fabric.getMaterial() + "\n" +
 //                "Total price:           " + customer.checkDiscount(customer, price.getPrice()) + "\n" +
-                "Delivery Time:         " + time.getCalculateDate() + "\n"+
+                "Delivery Time:           "+
                 "===============================";
     }
 }
