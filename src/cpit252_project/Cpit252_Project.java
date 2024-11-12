@@ -159,7 +159,6 @@ public class Cpit252_Project {
         backButton.setFocusPainted(false);
         backButton.setForeground(Color.WHITE);
         backButton.setBounds(10, 25, 30, 35); // Position the "Back" button differently
-        //backButton.setVisible(false);
         layeredPane.add(backButton, Integer.valueOf(3));
         
         
