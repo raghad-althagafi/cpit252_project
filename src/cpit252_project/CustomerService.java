@@ -25,7 +25,7 @@ public class CustomerService {
     //-----------------------------------------
     //method for adding Customers to system
     
-    public void addCustomer() {
+    public Customer addCustomer() {
        
         System.out.print("Enter customer phone number: "); //enter phone number
         String PhoneNumber=input.next();
@@ -49,6 +49,7 @@ public class CustomerService {
         }
         
         customer.setNumOfOrders(customer.getNumOfOrders()+1); //increase number of order for customer
+        return customer;
 
     }
     

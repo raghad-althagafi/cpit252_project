@@ -6,6 +6,7 @@
 package cpit252_project;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -39,6 +40,9 @@ public class Cpit252_Project {
    
         Scanner input = new Scanner(System.in);
 
+        CustomerService cus= new CustomerService();
+        Customer customer = cus.addCustomer();
+        //Customer newCustomer = addCustomerDisplay(input);
           // Get user input
         System.out.println("Enter garment type (e.g., 'dress', 'blouse', 'skirt'):");
         String garmentType = input.nextLine();
@@ -75,11 +79,9 @@ public class Cpit252_Project {
         LocalDate deliveryDate = deliveryDateCalculator.calculateDeliveryDate(expectedProduction_days);
    
         //------------------------------------------------------------------------------------------------------------------------
-        Customer c = new Customer("0555555555", "shahad");
-        System.out.println(c.getNumOfOrders());
         OrderBuilder orderBuilder = new Invoice();
         OrderDirector orderDirector = new OrderDirector(orderBuilder);
-        orderDirector.makeOrder(c, fabricType, garmentType, deliveryDate, finalPrice);
+        orderDirector.makeOrder(customer, fabricType, garmentType, deliveryDate, finalPrice);
         Order order = orderDirector.getOrder();
         System.out.println(order.GenerateInvoice());
        

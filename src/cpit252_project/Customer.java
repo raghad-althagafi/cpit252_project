@@ -24,7 +24,7 @@ public class Customer {
     public Customer(String phoneNumber, String name) {
         this.phoneNumber = phoneNumber;
         this.name = name;
-        ++this.NumOfOrders;
+        //this.NumOfOrders;
     }
     
     
