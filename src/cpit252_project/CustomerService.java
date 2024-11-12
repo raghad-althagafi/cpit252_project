@@ -61,7 +61,8 @@ public class CustomerService {
         while(PhoneNumber.length()!=10
                 || !(PhoneNumber.matches("\\d+")) 
                 || !(PhoneNumber.startsWith("05"))){
-            System.out.println("incorrect phone number! It should be 10 digits and not containning any charachters. Try Again.");
+            System.out.println("incorrect phone number! It should be"+
+                    "10 digits and not containning any charachters. Try Again.");
             System.out.print("Enter customer phone number: ");
             PhoneNumber= input.next();
             }
