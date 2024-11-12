@@ -33,8 +33,7 @@ public class Cpit252_Project {
         
         //-------------------------
         
-       
-        
+          
         
 //        ----------------------------------Strategy pattern and Decorator pattern for price and date -----------------------
    
@@ -71,10 +70,11 @@ public class Cpit252_Project {
         double finalPrice = priceContext.executePricingStrategy(garmentType, meter, fabricType);
 
         // Calculate delivery date
-        LocalDate deliveryDate = deliveryDateCalculator.calculateDeliveryDate(7); // Assume 7 days for standard delivery
-        System.out.println("The final price is: " + finalPrice);
-        System.out.println("The estimated delivery date is: " + deliveryDate);
-        
+        System.out.println("Enter the Expected production date");
+        int expectedProduction_days =input.nextInt();
+        LocalDate deliveryDate = deliveryDateCalculator.calculateDeliveryDate(expectedProduction_days);
+   
+        //------------------------------------------------------------------------------------------------------------------------
         Customer c = new Customer("0555555555", "shahad");
         System.out.println(c.getNumOfOrders());
         OrderBuilder orderBuilder = new Invoice();
@@ -82,6 +82,7 @@ public class Cpit252_Project {
         orderDirector.makeOrder(c, fabricType, garmentType, deliveryDate, finalPrice);
         Order order = orderDirector.getOrder();
         System.out.println(order.GenerateInvoice());
+       
      
         //--------------------------------------------------------------
         //database db = new database();

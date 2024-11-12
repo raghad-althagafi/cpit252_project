@@ -11,9 +11,16 @@ import java.time.LocalDate;
  * @author rafarezqallah
  */
 public class CalculateDate implements DeliveryDate {
-    
-     public LocalDate calculateDeliveryDate(int durationDays) {
-        return LocalDate.now().plusDays(durationDays);
-    
+    LocalDate date;
+     public LocalDate calculateDeliveryDate(int expectedProduction_days) {
+          date  = LocalDate.now().plusDays(expectedProduction_days);
+          return date;
 }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+   
+     
 }
