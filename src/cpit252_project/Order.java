@@ -80,16 +80,16 @@ public class Order {
 
     //to print invoice method
     public String GenerateInvoice() {
-        return "============ INVOICE ============" + "\n" +
-                "Order ID:              " + OrderID + "\n" +
-                "Customer Name:         " + customer.getName() + "\n" +
-                "Customer Phone Number: " + customer.getPhoneNumber() + "\n" +
-                "Garment Type:          " + garment.getType() + "\n" +
-                "Fabric Type:           " + fabric.getMaterial() + "\n" +
+        return "<html>"+
+                "Order ID:              " + OrderID + "<br>" +
+                "Customer Name:         " + customer.getName() + "<br>" +
+                "Customer Phone Number: " + customer.getPhoneNumber() + "<br>" +
+                "Garment Type:          " + garment.getType() + "<br>" +
+                "Fabric Type:           " + fabric.getMaterial() + "<br>" +
 //                "Total price:           " + customer.checkDiscount(customer, TotalPrice) + "\n" +
-                "Total price:           " + TotalPrice + "\n" +
+                "Total price:           " + TotalPrice + "<br>" +
 
-                "Delivery Time:         " +  time + "\n" +
-                "===============================";
+                "Delivery Time:         " +  time + "<br>" +
+                "</html>";
     }
 }
