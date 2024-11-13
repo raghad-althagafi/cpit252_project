@@ -18,7 +18,6 @@ public class Invoice implements OrderBuilder {
     private final AbstractFactory garmentFactory;
     private final AbstractFactory fabricFactory;
 //    private final PriceContext priceContext;
-    static ArrayList<Order> Orders = new ArrayList<>();
 
     public Invoice() {
         this.order = new Order();
@@ -68,7 +67,6 @@ public class Invoice implements OrderBuilder {
         Order builtOrder = this.order;
         //this.order = new Order();
         //return builtOrder;
-        Orders.add(order);
         return order;
     }
 }
