@@ -35,7 +35,10 @@ public class Cpit252_Project {
         //Facade
         CustomerService customerService= new CustomerService(); //customer adding service
         
-        TailorSystemFacade TailorSystemFacade = new TailorSystemFacade(customerService); //facade object
+        OrderService orderService= new OrderService(); //making order service
+
+        
+        TailorSystemFacade TailorSystemFacade = new TailorSystemFacade(customerService, orderService); //facade object
         
         //-------------------------
         

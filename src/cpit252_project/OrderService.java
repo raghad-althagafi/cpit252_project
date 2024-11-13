@@ -22,11 +22,11 @@ public class OrderService {
     private OrderDirector orderDirector;
     private Order order;
     
-    public OrderService(Scanner input){
+    public OrderService(){
         this.customerService = new CustomerService();
         this.orderBuilder = new Invoice();
         this.orderDirector = new OrderDirector(orderBuilder);
-        this.input = input;
+        this.input = new Scanner(System.in);
     }
 
     public String getGarment() {

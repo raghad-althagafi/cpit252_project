@@ -14,7 +14,7 @@ public class RealLogin implements Login{
     @Override
     public TailorSystemFacade login() {
         System.out.println("Welcome back");
-        return new TailorSystemFacade(new CustomerService());
+        return new TailorSystemFacade(new CustomerService(), new OrderService());
 
     }
 
