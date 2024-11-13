@@ -22,8 +22,8 @@ public class OrderService {
     private OrderDirector orderDirector;
     private Order order;
     
-    public OrderService(CustomerService customerService, Scanner input){
-        this.customerService = customerService;
+    public OrderService(Scanner input){
+        this.customerService = new CustomerService();
         this.orderBuilder = new Invoice();
         this.orderDirector = new OrderDirector(orderBuilder);
         this.input = input;
@@ -57,7 +57,6 @@ public class OrderService {
     
     public void makeOrder(){
         Customer customer = customerService.addCustomer();
-        System.out.println(getGarment() + " dddd");
         String garment = getGarment();
         String fabric = getFabric();
         double meters = getMeters();

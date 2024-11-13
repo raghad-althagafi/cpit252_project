@@ -18,13 +18,13 @@ public class TailorSystemFacade {
 
     public TailorSystemFacade() {
         this.customerService = new CustomerService();
-        this.orderService = new OrderService(customerService, input);
+        this.orderService = new OrderService(input);
     }
 
     public TailorSystemFacade(CustomerService customerService) {
         this.customerService = customerService;
         input = new Scanner(System.in);
-        this.orderService = new OrderService(customerService, input);
+        this.orderService = new OrderService(input);
     }
     
 
