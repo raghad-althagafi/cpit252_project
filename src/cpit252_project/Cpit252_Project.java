@@ -33,19 +33,9 @@ public class Cpit252_Project {
         
         //-------------------------
         //Facade
-//        
-//        CustomerService  = new CustomerService(); 
-//        Login L = new proxyLogin("raghad", "raghad");
-//        TailorSystemFacade TailorSystemFacade = L.login();
-        
-        //TailorSystemFacade.addCustomer(); //add customer service
-        //TailorSystemFacade.login();
         CustomerService customerService= new CustomerService(); //customer adding service
         
         TailorSystemFacade TailorSystemFacade = new TailorSystemFacade(customerService); //facade object
-        
-        
-        
         
         //-------------------------
         
@@ -111,7 +101,7 @@ public class Cpit252_Project {
         
         JFrame frame = new JFrame("Touch");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(600, 430);
+        frame.setSize(600, 480);
       
         
         JLayeredPane layeredPane = new JLayeredPane();
@@ -153,7 +143,7 @@ public class Cpit252_Project {
         invisibleButton.setForeground(Color.WHITE);
         
         //adjust button size and position
-        invisibleButton.setBounds(350, 350, 120, 40);
+        invisibleButton.setBounds(350, 370, 120, 40);
         layeredPane.add(invisibleButton, Integer.valueOf(2));
         
         // create button for add customer
@@ -199,6 +189,7 @@ public class Cpit252_Project {
                     imagelable.setIcon(imageIcon2);
                     String orderOutput = order.GenerateInvoice();
                     outputLabel.setText("<html>" + orderOutput + "</html>");
+                    invisibleButton2.setVisible(false);
                     invisibleButton.setVisible(false);
                     backButton.setVisible(true);
                         
