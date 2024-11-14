@@ -22,7 +22,6 @@ public abstract class DateDecorator implements DeliveryDate {
         this.isUrgent = true; // Flag the order as urgent
     }
       
-    public abstract LocalDate calculateUrgentDate(int durationDays);
        
     public boolean isUrgent() {
         return isUrgent;
