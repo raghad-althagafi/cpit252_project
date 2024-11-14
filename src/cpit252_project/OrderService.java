@@ -35,7 +35,7 @@ public class OrderService {
     }
 
     public String getFabric() {
-        System.out.println("Enter fabric type (e.g., 'cotton', 'silk', 'tulle'):");
+        System.out.println("Enter fabric type (e.g., 'cotton', 'leather', 'crepe'):");
         String garment = input.nextLine();
         return garment;
     }
