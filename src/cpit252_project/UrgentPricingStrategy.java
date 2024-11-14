@@ -11,9 +11,9 @@ import cpit252_project.PricingStrategy;
  * @author basma
  */
 public class UrgentPricingStrategy implements PricingStrategy {
-private final RushDateDecorator deliveryDecorator;
+private final DateDecorator deliveryDecorator;
 
-    public UrgentPricingStrategy(RushDateDecorator deliveryDecorator) {
+    public UrgentPricingStrategy(DateDecorator deliveryDecorator) {
         this.deliveryDecorator = deliveryDecorator;
     }
     @Override

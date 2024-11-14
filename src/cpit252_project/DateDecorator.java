@@ -10,13 +10,13 @@ import java.time.LocalDate;
  *
  * @author rafarezqallah
  */
-public class RushDateDecorator implements DeliveryDate {
+public abstract class DateDecorator implements DeliveryDate {
     
- private final DeliveryDate baseCalculator;
- private final int rushDays;
- private boolean isUrgent;
+ final DeliveryDate baseCalculator;
+ final int rushDays;
+ boolean isUrgent;
  
-      public RushDateDecorator(DeliveryDate baseCalculator, int rushDays) {
+      public DateDecorator(DeliveryDate baseCalculator, int rushDays) {
         this.baseCalculator = baseCalculator;
         this.rushDays = rushDays;
         this.isUrgent = true; // Flag the order as urgent

@@ -72,7 +72,7 @@ public class Cpit252_Project {
         DeliveryDate deliveryDateCalculator = new CalculateDate();
         if (isUrgent) {
             // Apply the Rush Date Decorator for urgent orders
-            RushDateDecorator rushDecorator = new RushDateDecorator(deliveryDateCalculator, 2); // e.g., 2 days rush
+            UrgentDateDecorator rushDecorator = new UrgentDateDecorator(deliveryDateCalculator, 2); // e.g., 2 days rush
             deliveryDateCalculator = rushDecorator;  // Use the decorated calculator
             pricingStrategy = new UrgentPricingStrategy(rushDecorator); // Apply Urgent Pricing Strategy
         }
