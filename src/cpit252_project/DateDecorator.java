@@ -22,12 +22,9 @@ public abstract class DateDecorator implements DeliveryDate {
         this.isUrgent = true; // Flag the order as urgent
     }
       
-      @Override
-    public LocalDate calculateDeliveryDate(int durationDays) {
-        return baseCalculator.calculateDeliveryDate(durationDays - rushDays);
-    }
-    
-   public boolean isUrgent() {
+    public abstract LocalDate calculateUrgentDate(int durationDays);
+       
+    public boolean isUrgent() {
         return isUrgent;
     }
     

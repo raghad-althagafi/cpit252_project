@@ -44,7 +44,7 @@ public class Cpit252_Project {
         
           
         
-//        -------customerService---------------------------Strategy pattern and Decorator pattern for price and date -----------------------
+//        -------------------------------Strategy pattern and Decorator pattern for price and date -----------------------
    
         Scanner input = new Scanner(System.in);
 

@@ -10,18 +10,28 @@ import java.time.LocalDate;
  *
  * @author rafarezqallah
  */
+
 public class UrgentDateDecorator extends DateDecorator {
     
     public UrgentDateDecorator(DeliveryDate baseCalculator, int rushDays) {
         super(baseCalculator, rushDays);
     }
+    
+     @Override
+    public  LocalDate calculateDeliveryDate(int durationDays) {
+        
+       return calculateUrgentDate(durationDays);
+    }
+    
        @Override
-    public LocalDate calculateDeliveryDate(int durationDays) {
+    public LocalDate calculateUrgentDate(int durationDays) {
         return baseCalculator.calculateDeliveryDate(durationDays - rushDays);
     }
     
    public boolean isUrgent() {
         return isUrgent;
     }
-    
+
+  
+  
 }

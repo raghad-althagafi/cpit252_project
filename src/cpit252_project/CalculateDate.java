@@ -19,8 +19,5 @@ public class CalculateDate implements DeliveryDate {
 
     public LocalDate getDate() {
         return date;
-    }
-
-   
-     
+    }   
 }
