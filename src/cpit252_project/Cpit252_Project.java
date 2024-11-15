@@ -36,29 +36,18 @@ public class Cpit252_Project {
         //Login
         Login loin = new proxyLogin("raghad", "raghad");
         TailorSystemFacade TailorSystemFacade = loin.login();
-        CustomerService customerService= new CustomerService(); //customer adding service
-        
-        OrderService orderService= new OrderService(); //making order service
-
-        
-//        TailorSystemFacade TailorSystemFacade = new TailorSystemFacade(customerService, orderService); //facade object
-        
         
         PricingAndDeliveryDateService pricingService = new PricingAndDeliveryDateService();//calculate price and deliverydate
         pricingService.calculatePricingAndDeliveryDate();
 
-        //-------------------------
         
-          
-        
-//        -------------------------------Strategy pattern and Decorator pattern for price and date -----------------------
+    //-------------------------------Strategy pattern and Decorator pattern for price and date -----------------------
    
         Scanner input = new Scanner(System.in);
 
-        CustomerService cus= new CustomerService();
-        Customer customer = cus.addCustomer();
-        //Customer newCustomer = addCustomerDisplay(input);
-          // Get user input
+        
+        CustomerService customerService = new CustomerService();
+        Customer customer = customerService.addCustomer(); //let user enter customer info
           
           
         //get price info from PricingAndDeliveryDateService facade
@@ -146,7 +135,7 @@ public class Cpit252_Project {
           
 
             @Override
-            public void actionPerformed(ActionEvent e) {
+            public void actionPerformed(ActionEvent e) { 
               
                     TailorSystemFacade.addCustomer();
                         
