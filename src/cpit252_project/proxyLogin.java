@@ -36,6 +36,7 @@ public class proxyLogin implements Login {
         }
         else{
             System.out.println("user not fount or Incorrect password.");
+            System.exit(0);
             return null;
         }
      }

@@ -32,13 +32,16 @@ public class Cpit252_Project {
         
         
         //-------------------------
-        //Facade
+        //Facade 
+        //Login
+        Login loin = new proxyLogin("raghad", "raghad");
+        TailorSystemFacade TailorSystemFacade = loin.login();
         CustomerService customerService= new CustomerService(); //customer adding service
         
         OrderService orderService= new OrderService(); //making order service
 
         
-        TailorSystemFacade TailorSystemFacade = new TailorSystemFacade(customerService, orderService); //facade object
+//        TailorSystemFacade TailorSystemFacade = new TailorSystemFacade(customerService, orderService); //facade object
         
         
         PricingAndDeliveryDateService pricingService = new PricingAndDeliveryDateService();//calculate price and deliverydate
