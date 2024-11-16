@@ -15,9 +15,8 @@ public class TailorSystemFacade {
     private Scanner input;
     private final CustomerService customerService;
     private final OrderService orderService;
-    private  PricingSevice Pricingsevice;
-    private  DeliveryDateSevice deliveryDateSevice;
-
+    private   DeliveryDateSevice deliveryDateSevice;
+    private   PricingSevice Pricingsevice;
     public TailorSystemFacade() {
         this.customerService = new CustomerService();
         this.orderService = new OrderService();
@@ -26,12 +25,20 @@ public class TailorSystemFacade {
                 
     }
 
-    public TailorSystemFacade(CustomerService customerService, OrderService orderService) {
+    public TailorSystemFacade(CustomerService customerService, OrderService orderService,DeliveryDateSevice deliveryDateSevice ,PricingSevice Pricingsevice ) {
         this.customerService = customerService;
         input = new Scanner(System.in);
         this.orderService = orderService;
+        this.deliveryDateSevice = deliveryDateSevice;
+        this.Pricingsevice = Pricingsevice;  
     }
     
+    public TailorSystemFacade(CustomerService customerService, OrderService orderService) {
+        this.customerService = customerService;
+        this.orderService = orderService;
+        this.Pricingsevice = new PricingSevice(); // Default initialization
+        this.deliveryDateSevice = new DeliveryDateSevice(); // Default initialization
+    }
 
     public String makeOrder(){
         return (orderService.makeOrder());
@@ -40,4 +47,10 @@ public class TailorSystemFacade {
     public void addCustomer() {
         customerService.addCustomer();
     }
+    public void calculateDeliveryDate(){
+        deliveryDateSevice.calculateDeliveryDate();
+    }
+     public void calculatePricing(){
+         Pricingsevice.calculatePricing();
+     }
 }

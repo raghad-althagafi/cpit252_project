@@ -24,10 +24,10 @@ public class Order {
     public Order(){
         ++OrderID;
     }
-    public Order(double TotalPrice, Customer customer,  LocalDate time) {
+    public Order( Customer customer, double TotalPrice, LocalDate time) {
         ++OrderID;
-        this.TotalPrice = TotalPrice;
         this.customer = customer;
+        this.TotalPrice = TotalPrice;
         this.time = time;
     }
 
@@ -36,10 +36,7 @@ public class Order {
     public void setOrderID(int OrderID) {
         this.OrderID = OrderID;
     }
-
-    public void setTotalPrice(double TotalPrice) {
-        this.TotalPrice = TotalPrice;
-    }
+   
     public void setCustomer(Customer customer) {
         this.customer = customer;
     }
@@ -49,20 +46,23 @@ public class Order {
     public void setGarment(Garment garment) {
         this.garment = garment;
     }
-
+ public void setTotalPrice(double TotalPrice) {
+        this.TotalPrice = TotalPrice;
+    }
     public void setTime(LocalDate time) {
         this.time = time;
     }
 
     //getter
-    public double getTotalPrice() {
-        return TotalPrice;
-    }
+    
 
     public Customer getCustomer() {
         return customer;
     }
-
+    
+    public double getTotalPrice() {
+        return TotalPrice;
+    }
     public LocalDate getTime() {
         return time;
     }

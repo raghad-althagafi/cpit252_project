@@ -11,14 +11,20 @@ import java.util.Scanner;
 
 /**
  *
- * @author basma
+ * @author rafa
  */
 public class DeliveryDateSevice {
     private LocalDate deliveryDate;
+    private boolean isUrgent;
 
-    public void calculateDeliveryDate(boolean isUrgent) {
+    public void calculateDeliveryDate() {
         Scanner input = new Scanner(System.in);
-
+        
+  // Check if the order is urgent
+        System.out.println("Is the order urgent? yes=1 / no=2");
+        int isUrgentChoice = input.nextInt();
+        isUrgent = (isUrgentChoice == 1);
+        
         System.out.println("Enter the Expected production date (in days):");
         int expectedProductionDays = input.nextInt();
 
