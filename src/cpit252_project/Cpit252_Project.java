@@ -50,15 +50,13 @@ public class Cpit252_Project {
         Scanner input = new Scanner(System.in);
 
         
-        CustomerService customerService = new CustomerService();
-        Customer customer = customerService.addCustomer(); //let user enter customer info
           
           
         //get price info from PricingAndDeliveryDateService facade
-        double finalPrice = pricingService.getFinalPrice();
-        LocalDate deliveryDate = pricingService.getDeliveryDate();
-        String garmentType = pricingService.getGarmentType();
-        String fabricType = pricingService.getFabricType();
+        //double finalPrice = pricingService.getFinalPrice();
+        //LocalDate deliveryDate = pricingService.getDeliveryDate();
+        //String garmentType = pricingService.getGarmentType();
+        //String fabricType = pricingService.getFabricType();
         
         //------------------------------------------Builder design pattern for make order------------------------------------------------------------------------------
         //get invoice from OrderService facade
@@ -90,7 +88,7 @@ public class Cpit252_Project {
         
         
         // use your paths, note: images are in (resourse) folder
-        ImageIcon imageIcon = new ImageIcon("C:\\Users\\shaha\\OneDrive\\المستندات\\NetBeansProjects\\cpit252_project\\src\\resources\\1.png"); 
+        ImageIcon imageIcon = new ImageIcon("C:\\Users\\msbbr\\OneDrive\\Documents\\NetBeansProjects\\cpit252_project\\src\\resources\\1.png"); 
         Image image = imageIcon.getImage().getScaledInstance(frame.getWidth(), frame.getHeight(), Image.SCALE_SMOOTH);
         imageIcon.setImage(image);
 
@@ -102,7 +100,7 @@ public class Cpit252_Project {
        
       
         // second image
-        ImageIcon imageIcon2 = new ImageIcon("C:\\Users\\shaha\\OneDrive\\المستندات\\NetBeansProjects\\cpit252_project\\src\\resources\\2.png"); 
+        ImageIcon imageIcon2 = new ImageIcon("C:\\Users\\msbbr\\OneDrive\\Documents\\NetBeansProjects\\cpit252_project\\src\\resources\\2.png"); 
         Image Image2 = imageIcon2.getImage().getScaledInstance(frame.getWidth(), frame.getHeight(), Image.SCALE_SMOOTH);
         imageIcon2.setImage(Image2);
        
@@ -124,11 +122,11 @@ public class Cpit252_Project {
         invisibleButton.setForeground(Color.WHITE);
         
         //adjust button size and position
-        invisibleButton.setBounds(350, 370, 120, 40);
+        invisibleButton.setBounds(350, 375, 120, 40);
         layeredPane.add(invisibleButton, Integer.valueOf(2));
         
         // create button for add customer
-        JButton invisibleButton2 = new JButton("Add Customer");
+        JButton invisibleButton2 = new JButton("          ");
         invisibleButton2.setOpaque(false);
         invisibleButton2.setContentAreaFilled(false);
         invisibleButton2.setBorderPainted(false);
@@ -136,7 +134,7 @@ public class Cpit252_Project {
         invisibleButton2.setForeground(Color.WHITE);
         
         //adjust button size and position
-        invisibleButton2.setBounds(148, 248, 120, 40);
+        invisibleButton2.setBounds(135, 260, 120, 40);
         layeredPane.add(invisibleButton2, Integer.valueOf(2));
         
         invisibleButton2.addActionListener(new ActionListener() { //if user click the button
