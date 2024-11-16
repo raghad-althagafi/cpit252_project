@@ -58,7 +58,7 @@ public class OrderService {
 //        return input.nextInt();
 //    }
     
-    public void makeOrder(){
+    public String makeOrder(){
         priceAndDeliery.calculatePricingAndDeliveryDate();
         Customer customer = customerService.addCustomer();
         String garment = priceAndDeliery.getGarmentType();
@@ -70,6 +70,6 @@ public class OrderService {
         orderDirector.makeOrder(customer, fabric, garment, deliveryDate, finalPrice);
         Order order = orderDirector.getOrder();
         Orders.add(order);
-        System.out.println(order.GenerateInvoice()); 
+        return (order.GenerateInvoice()); 
     }
 }

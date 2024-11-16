@@ -34,8 +34,12 @@ public class Cpit252_Project {
         //-------------------------
         //Facade 
         //Login
+        database db = new database();
+        //db.addSampleEvents();
+        
         Login loin = new proxyLogin("raghad", "raghad");
         TailorSystemFacade TailorSystemFacade = loin.login();
+        //TailorSystemFacade TailorSystemFacade = new TailorSystemFacade();
         
         PricingAndDeliveryDateService pricingService = new PricingAndDeliveryDateService();//calculate price and deliverydate
         pricingService.calculatePricingAndDeliveryDate();
@@ -57,10 +61,14 @@ public class Cpit252_Project {
         String fabricType = pricingService.getFabricType();
         
         //------------------------------------------Builder design pattern for make order------------------------------------------------------------------------------
-        OrderBuilder orderBuilder = new Invoice();
-        OrderDirector orderDirector = new OrderDirector(orderBuilder);
-        orderDirector.makeOrder(customer, fabricType, garmentType, deliveryDate, finalPrice);
-        Order order = orderDirector.getOrder();
+        //get invoice from OrderService facade
+        
+        
+          //String invoice = TailorSystemFacade.makeOrder();
+//        OrderBuilder orderBuilder = new Invoice();
+//        OrderDirector orderDirector = new OrderDirector(orderBuilder);
+//        orderDirector.makeOrder(customer, fabricType, garmentType, deliveryDate, finalPrice);
+//        Order order = orderDirector.getOrder();
         //System.out.println(order.GenerateInvoice());
         
        
@@ -82,7 +90,7 @@ public class Cpit252_Project {
         
         
         // use your paths, note: images are in (resourse) folder
-        ImageIcon imageIcon = new ImageIcon("C:\\Users\\msbbr\\OneDrive\\Documents\\NetBeansProjects\\cpit252_project\\src\\resources\\1.png"); 
+        ImageIcon imageIcon = new ImageIcon("C:\\Users\\shaha\\OneDrive\\المستندات\\NetBeansProjects\\cpit252_project\\src\\resources\\1.png"); 
         Image image = imageIcon.getImage().getScaledInstance(frame.getWidth(), frame.getHeight(), Image.SCALE_SMOOTH);
         imageIcon.setImage(image);
 
@@ -94,7 +102,7 @@ public class Cpit252_Project {
        
       
         // second image
-        ImageIcon imageIcon2 = new ImageIcon("C:\\Users\\msbbr\\OneDrive\\Documents\\NetBeansProjects\\cpit252_project\\src\\resources\\2.png"); 
+        ImageIcon imageIcon2 = new ImageIcon("C:\\Users\\shaha\\OneDrive\\المستندات\\NetBeansProjects\\cpit252_project\\src\\resources\\2.png"); 
         Image Image2 = imageIcon2.getImage().getScaledInstance(frame.getWidth(), frame.getHeight(), Image.SCALE_SMOOTH);
         imageIcon2.setImage(Image2);
        
@@ -108,7 +116,7 @@ public class Cpit252_Project {
         
         
         // create button
-        JButton invisibleButton = new JButton("make order");
+        JButton invisibleButton = new JButton("          ");
         invisibleButton.setOpaque(false);
         invisibleButton.setContentAreaFilled(false);
         invisibleButton.setBorderPainted(false);
@@ -160,7 +168,7 @@ public class Cpit252_Project {
             public void actionPerformed(ActionEvent e) {
               
                     imagelable.setIcon(imageIcon2);
-                    String orderOutput = order.GenerateInvoice();
+                    String orderOutput = TailorSystemFacade.makeOrder();
                     outputLabel.setText("<html>" + orderOutput + "</html>");
                     invisibleButton2.setVisible(false);
                     invisibleButton.setVisible(false);

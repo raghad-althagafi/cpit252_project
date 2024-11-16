@@ -28,8 +28,8 @@ public class TailorSystemFacade {
     }
     
 
-    public void makeOrder(){
-        orderService.makeOrder();
+    public String makeOrder(){
+        return (orderService.makeOrder());
     }
 
     public void addCustomer() {
