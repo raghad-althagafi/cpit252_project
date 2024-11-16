@@ -22,15 +22,16 @@ public class OrderService {
     private OrderBuilder orderBuilder;
     private OrderDirector orderDirector;
     private Order order;
-    private PricingAndDeliveryDateService priceAndDeliery;
+private PricingSevice Pricingsevice;
+    private DeliveryDateSevice deliveryDateSevice;
     
     public OrderService(){
         this.customerService = new CustomerService();
         this.orderBuilder = new Invoice();
         this.orderDirector = new OrderDirector(orderBuilder);
         this.input = new Scanner(System.in);
-        this.priceAndDeliery = new PricingAndDeliveryDateService();
-    }
+this.Pricingsevice = new PricingSevice();
+        this.deliveryDateSevice = new DeliveryDateSevice();    }
 
 //    public String getGarment() {
 //        System.out.println("Enter garment type (e.g., 'dress', 'blouse', 'skirt'):");
@@ -59,14 +60,14 @@ public class OrderService {
 //    }
     
     public String makeOrder(){
-        priceAndDeliery.calculatePricingAndDeliveryDate();
+        Pricingsevice.calculatePricing();
         Customer customer = customerService.addCustomer();
-        String garment = priceAndDeliery.getGarmentType();
-        String fabric = priceAndDeliery.getFabricType();
+        String garment = Pricingsevice.getGarmentType();
+        String fabric = Pricingsevice.getFabricType();
         //double meters = ;
 //        boolean urgent = priceAndDeliery.isUrgent();
-        LocalDate deliveryDate = priceAndDeliery.getDeliveryDate();
-        double finalPrice = priceAndDeliery.getFinalPrice();
+        LocalDate deliveryDate = deliveryDateSevice.getDeliveryDate();
+        double finalPrice = Pricingsevice.getFinalPrice();
         orderDirector.makeOrder(customer, fabric, garment, deliveryDate, finalPrice);
         Order order = orderDirector.getOrder();
         Orders.add(order);

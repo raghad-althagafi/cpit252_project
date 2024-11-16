@@ -34,17 +34,17 @@ public class Cpit252_Project {
         //-------------------------
         //Facade 
         //Login
-        database db = new database();
-        //db.addSampleEvents();
+//        database db = new database();
+//        db.addSampleEvents();
         
         Login loin = new proxyLogin("raghad", "raghad");
         TailorSystemFacade TailorSystemFacade = loin.login();
         //TailorSystemFacade TailorSystemFacade = new TailorSystemFacade();
         
-        PricingAndDeliveryDateService pricingService = new PricingAndDeliveryDateService();//calculate price and deliverydate
-        pricingService.calculatePricingAndDeliveryDate();
+        PricingSevice Pricingsevice = new PricingSevice();
+                Pricingsevice.calculatePricing();
 
-        
+        DeliveryDateSevice deliveryDateSevice = new DeliveryDateSevice();
     //-------------------------------Strategy pattern and Decorator pattern for price and date -----------------------
    
         Scanner input = new Scanner(System.in);
@@ -72,8 +72,8 @@ public class Cpit252_Project {
        
        
         //--------------------------------------------------------------
-        //database db = new database();
-        //System.out.println(db.checkLogin("raghad", "raghad"));
+//        database db = new database();
+//        System.out.println(db.checkLogin("raghad", "raghad"));
         
         
         //------------------------------------------display output in interface-------------------------------------------------------
@@ -88,7 +88,7 @@ public class Cpit252_Project {
         
         
         // use your paths, note: images are in (resourse) folder
-        ImageIcon imageIcon = new ImageIcon("C:\\Users\\msbbr\\OneDrive\\Documents\\NetBeansProjects\\cpit252_project\\src\\resources\\1.png"); 
+        ImageIcon imageIcon = new ImageIcon("/Users/basma/Downloads/cpit252_project-master-5/src/resources/1.png"); 
         Image image = imageIcon.getImage().getScaledInstance(frame.getWidth(), frame.getHeight(), Image.SCALE_SMOOTH);
         imageIcon.setImage(image);
 
@@ -100,7 +100,7 @@ public class Cpit252_Project {
        
       
         // second image
-        ImageIcon imageIcon2 = new ImageIcon("C:\\Users\\msbbr\\OneDrive\\Documents\\NetBeansProjects\\cpit252_project\\src\\resources\\2.png"); 
+        ImageIcon imageIcon2 = new ImageIcon("/Users/basma/Downloads/cpit252_project-master-5/src/resources/2.png"); 
         Image Image2 = imageIcon2.getImage().getScaledInstance(frame.getWidth(), frame.getHeight(), Image.SCALE_SMOOTH);
         imageIcon2.setImage(Image2);
        
