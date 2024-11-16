@@ -15,10 +15,15 @@ public class TailorSystemFacade {
     private Scanner input;
     private final CustomerService customerService;
     private final OrderService orderService;
+    private  PricingSevice Pricingsevice;
+    private  DeliveryDateSevice deliveryDateSevice;
 
     public TailorSystemFacade() {
         this.customerService = new CustomerService();
         this.orderService = new OrderService();
+        this.Pricingsevice= new PricingSevice();
+        this.deliveryDateSevice= new DeliveryDateSevice();
+                
     }
 
     public TailorSystemFacade(CustomerService customerService, OrderService orderService) {
