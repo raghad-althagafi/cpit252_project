@@ -13,12 +13,12 @@ import cpit252_project.PricingStrategy;
  */
 public class StandardPricingStrategy implements PricingStrategy {
 
-    private GarmentFactory garmentFactory;
-    private FabricFactory fabricFactory;
+     private AbstractFactory garmentFactory;
+    private AbstractFactory fabricFactory;
 
     public StandardPricingStrategy() {
-        this.garmentFactory = new GarmentFactory();
-        this.fabricFactory = new FabricFactory();
+        this.garmentFactory = FactoryProducer.getFactory("garment");
+        this.fabricFactory = FactoryProducer.getFactory("fabric");
     }
 
     @Override

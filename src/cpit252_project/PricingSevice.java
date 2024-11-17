@@ -12,6 +12,7 @@ import java.util.Scanner;
  * @author basma
  */
 public class PricingSevice {
+
     private String garmentType;
     private String fabricType;
     private double meter;
@@ -45,7 +46,7 @@ public class PricingSevice {
         PriceContext priceContext = new PriceContext(pricingStrategy);
         finalPrice = priceContext.executePricingStrategy(garmentType, meter, fabricType);
 
-        System.out.println("Final Price: " + finalPrice);
+        System.out.println(String.format("Final Price: %.2f", finalPrice));
     }
 
     public double getFinalPrice() {
