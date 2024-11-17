@@ -26,7 +26,6 @@ public class database {
        connectToDatabase();
         //(3) create DB tables 
         createTables();
-       // addSampleEvents();
       
     }
     

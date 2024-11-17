@@ -16,7 +16,6 @@ public class proxyLogin implements Login {
     private Login login;
     private String username;
     private String Password;
-    //private String CorrectPassword = "1234567";
     database db;
 
     public proxyLogin(String Password,String username) {
