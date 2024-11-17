@@ -72,8 +72,7 @@ public class Cpit252_Project {
        
        
         //--------------------------------------------------------------
-        database db = new database();
-        System.out.println(db.checkLogin("raghad", "raghad"));
+        
         
         
         //------------------------------------------display output in interface-------------------------------------------------------

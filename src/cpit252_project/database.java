@@ -39,7 +39,7 @@ public class database {
     String createDatabase = "CREATE DATABASE IF NOT EXISTS TailorSystem";
     
     //connect to mySql server
-    try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306", "root", "Rafa2003");
+    try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306", "root", "raghad");
              Statement st = conn.createStatement()) {
             // Execute statement to create the database
             st.executeUpdate(createDatabase);
@@ -57,7 +57,7 @@ public class database {
         try {
             //Set the connection to KAU_EVENTS DB
             String connectionURL = "jdbc:mysql://localhost:3306/TailorSystem";
-            con = DriverManager.getConnection(connectionURL, "root", "Rafa2003");
+            con = DriverManager.getConnection(connectionURL, "root", "raghad");
             System.out.println("Connected to the database.");
         } catch (SQLException s) {
             System.out.println("SQL statement for connecting to the database is not executed!");
@@ -85,75 +85,7 @@ public class database {
     }
     
 
-    
-    //method to insert useres in users table
-    public void registerUser(String username, String password){
-        
-        //insert user row
-        String user = "INSERT INTO users (username, password) VALUES (?, ?)";
-        
-        try (PreparedStatement st = con.prepareStatement(user)){
-            
-            //set the values of row
-            st.setString(1, username);   
-            st.setString(2, password);
-            
-            //excute statment
-            st.executeUpdate();
-            System.out.println("user added!");
-        }
-        catch (SQLException s){
-         System.out.println("SQL statement register is not executed!");
-        }
-    }
-    
-    
-    
-    
-    
-
-
-
-    
-    
-  
-    
  
-    
-     public boolean deleteUser(String username) {
-        String query = "DELETE FROM users WHERE username = ?";
-        try (PreparedStatement st = con.prepareStatement(query)) {
-            st.setString(1, username);
-
-            int rowsAffected = st.executeUpdate();
-
-            if (rowsAffected > 0) {
-                //if user successfully deleted
-                return true;
-            } else {
-                //failed to delete user
-                return false;
-            }
-
-        } catch (SQLException s) {
-            System.out.println("SQL statement for user deletion is not executed!");
-            s.printStackTrace();
-            return false;
-        }
-    }
- 
-     public void addSampleEvents(){
-    String query = "INSERT INTO users "
-            + "(username, password) VALUES"
-            + "('raghad', 'raghad'),"
-            + "('shahad', 'shahad')";
-    try (PreparedStatement st = con.prepareStatement(query)) {
-        st.executeUpdate(query);
-
-    } catch (SQLException s) {
-        System.out.println("Failed to update events: " + s.getMessage());
-    }
-}
      
         //method to check user Login
     public boolean checkLogin(String username,String Password){
