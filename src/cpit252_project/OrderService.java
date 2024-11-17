@@ -60,12 +60,13 @@ this.Pricingsevice = new PricingSevice();
 //    }
     
     public String makeOrder(){
-        Pricingsevice.calculatePricing();
         Customer customer = customerService.addCustomer();
+        Pricingsevice.calculatePricing();
         String garment = Pricingsevice.getGarmentType();
         String fabric = Pricingsevice.getFabricType();
         //double meters = ;
 //        boolean urgent = priceAndDeliery.isUrgent();
+        deliveryDateSevice.calculateDeliveryDate();
         LocalDate deliveryDate = deliveryDateSevice.getDeliveryDate();
         double finalPrice = Pricingsevice.getFinalPrice();
         orderDirector.makeOrder(customer, fabric, garment, deliveryDate, finalPrice);
