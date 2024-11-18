@@ -36,8 +36,13 @@ public class Cpit252_Project {
         //Login
 //        database db = new database();
 //        db.addSampleEvents();
-//        
-        Login loin = new proxyLogin("raghad", "raghad");
+//
+         Scanner input = new Scanner(System.in);
+         System.out.println("Enter the username");
+         String user = input.next();
+         System.out.println("Enter the password");
+         String pass = input.next();
+        Login loin = new proxyLogin(user, pass);
         TailorSystemFacade TailorSystemFacade = loin.login();
         //TailorSystemFacade TailorSystemFacade = new TailorSystemFacade();
         
