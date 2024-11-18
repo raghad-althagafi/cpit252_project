@@ -33,56 +33,20 @@ public class Cpit252_Project {
          
         
         
-        //-------------------------
-        //Facade 
-        //Login
+        //----------------------Login----------------------
         database db = new database();
-        //db.addSampleEvents(); never use
 
          Scanner input = new Scanner(System.in);
-         System.out.println("Enter the username");
+         System.out.println("Enter the username"); //read username
          String user = input.next();
-         System.out.println("Enter the password");
+         System.out.println("Enter the password"); //read pass
          String pass = input.next();
         Login loin = new proxyLogin(user, pass);
+        
+        //----------------------Facade----------------------
         TailorSystemFacade TailorSystemFacade = loin.login();
-        //TailorSystemFacade TailorSystemFacade = new TailorSystemFacade();
         
-//        PricingSevice Pricingsevice = new PricingSevice();
-//                Pricingsevice.calculatePricing();
-//
-//        DeliveryDateSevice deliveryDateSevice = new DeliveryDateSevice();
-    //-------------------------------Strategy pattern and Decorator pattern for price and date -----------------------
-   
-//        Scanner input = new Scanner(System.in);
-
-        
-          
-          
-        //get price info from PricingAndDeliveryDateService facade
-        //double finalPrice = pricingService.getFinalPrice();
-        //LocalDate deliveryDate = pricingService.getDeliveryDate();
-        //String garmentType = pricingService.getGarmentType();
-        //String fabricType = pricingService.getFabricType();
-        
-        //------------------------------------------Builder design pattern for make order------------------------------------------------------------------------------
-        //get invoice from OrderService facade
-        
-        
-          //String invoice = TailorSystemFacade.makeOrder();
-//        OrderBuilder orderBuilder = new Invoice();
-//        OrderDirector orderDirector = new OrderDirector(orderBuilder);
-//        orderDirector.makeOrder(customer, fabricType, garmentType, deliveryDate, finalPrice);
-//        Order order = orderDirector.getOrder();
-        //System.out.println(order.GenerateInvoice());
-        
-       
-       
-        //--------------------------------------------------------------
-        
-        
-        
-        //------------------------------------------display output in interface-------------------------------------------------------
+        //------------display output in interface---------------
         
         JFrame frame = new JFrame("Touch");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -94,7 +58,7 @@ public class Cpit252_Project {
         
         
         // use your paths, note: images are in (resourse) folder
-        ImageIcon imageIcon = new ImageIcon("C:\\Users\\shaha\\OneDrive\\المستندات\\NetBeansProjects\\cpit252_project\\src\\resources\\1.png"); 
+        ImageIcon imageIcon = new ImageIcon("C:\\Users\\msbbr\\OneDrive\\Documents\\NetBeansProjects\\cpit252_project\\src\\resources\\1.png"); 
         Image image = imageIcon.getImage().getScaledInstance(frame.getWidth(), frame.getHeight(), Image.SCALE_SMOOTH);
         imageIcon.setImage(image);
 
@@ -106,7 +70,7 @@ public class Cpit252_Project {
        
       
         // second image
-        ImageIcon imageIcon2 = new ImageIcon("C:\\Users\\shaha\\OneDrive\\المستندات\\NetBeansProjects\\cpit252_project\\src\\resources\\2.png"); 
+        ImageIcon imageIcon2 = new ImageIcon("C:\\Users\\msbbr\\OneDrive\\Documents\\NetBeansProjects\\cpit252_project\\src\\resources\\2.png"); 
         Image Image2 = imageIcon2.getImage().getScaledInstance(frame.getWidth(), frame.getHeight(), Image.SCALE_SMOOTH);
         imageIcon2.setImage(Image2);
        
