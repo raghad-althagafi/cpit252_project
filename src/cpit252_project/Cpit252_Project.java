@@ -94,7 +94,7 @@ public class Cpit252_Project {
         
         
         // use your paths, note: images are in (resourse) folder
-        ImageIcon imageIcon = new ImageIcon("/Users/rafarezqallah/NetBeansProjects/cpit252_project/src/resources/1.png"); 
+        ImageIcon imageIcon = new ImageIcon("C:\\Users\\shaha\\OneDrive\\المستندات\\NetBeansProjects\\cpit252_project\\src\\resources\\1.png"); 
         Image image = imageIcon.getImage().getScaledInstance(frame.getWidth(), frame.getHeight(), Image.SCALE_SMOOTH);
         imageIcon.setImage(image);
 
@@ -106,7 +106,7 @@ public class Cpit252_Project {
        
       
         // second image
-        ImageIcon imageIcon2 = new ImageIcon("/Users/rafarezqallah/NetBeansProjects/cpit252_project/src/resources/2.png"); 
+        ImageIcon imageIcon2 = new ImageIcon("C:\\Users\\shaha\\OneDrive\\المستندات\\NetBeansProjects\\cpit252_project\\src\\resources\\2.png"); 
         Image Image2 = imageIcon2.getImage().getScaledInstance(frame.getWidth(), frame.getHeight(), Image.SCALE_SMOOTH);
         imageIcon2.setImage(Image2);
        
@@ -127,28 +127,28 @@ public class Cpit252_Project {
         makeOrderButton.setFocusPainted(false);
         makeOrderButton.setForeground(Color.WHITE);
         //adjust button size and position
-        makeOrderButton.setBounds(350, 375, 120, 40);
+        makeOrderButton.setBounds(350, 375, 130, 50);
         layeredPane.add(makeOrderButton, Integer.valueOf(2));
         
         // create button for add customer
-        JButton customerButton = new JButton("          ");
+        JButton customerButton = new JButton("            ");
         customerButton.setOpaque(false);
         customerButton.setContentAreaFilled(false);
         customerButton.setBorderPainted(false);
         customerButton.setFocusPainted(false);
         customerButton.setForeground(Color.WHITE);
          //adjust button size and position
-        customerButton.setBounds(135, 260, 120, 40);
+        customerButton.setBounds(133, 260, 130, 50);
         layeredPane.add(customerButton, Integer.valueOf(2));
         
         // create button for delivery date
-         JButton dateButton= new JButton("          ");
+         JButton dateButton= new JButton("             ");
         dateButton.setOpaque(false);
         dateButton.setContentAreaFilled(false);
         dateButton.setBorderPainted(false);
         dateButton.setFocusPainted(false);
         dateButton.setForeground(Color.WHITE);
-        dateButton.setBounds(193, 352, 120, 40);
+        dateButton.setBounds(133, 382, 130, 50);
         layeredPane.add(dateButton, Integer.valueOf(2));
         
         // create button for Pricing
@@ -158,7 +158,7 @@ public class Cpit252_Project {
         priceButton.setBorderPainted(false);
         priceButton.setFocusPainted(false);
         priceButton.setForeground(Color.WHITE);
-        priceButton.setBounds(411, 253, 120, 40);
+        priceButton.setBounds(411, 263, 130, 50);
         layeredPane.add(priceButton, Integer.valueOf(2));
         
         
