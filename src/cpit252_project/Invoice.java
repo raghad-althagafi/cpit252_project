@@ -1,29 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
+
 package cpit252_project;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 
-/**
- *
- * @author shaha
- */
 public class Invoice implements OrderBuilder {
 
     private Order order;
     private final AbstractFactory garmentFactory;
     private final AbstractFactory fabricFactory;
-//    private final PriceContext priceContext;
 
     public Invoice() {
         this.order = new Order();
         this.garmentFactory = FactoryProducer.getFactory("garment");
         this.fabricFactory = FactoryProducer.getFactory("Fabric");
-//        this.priceContext = new PriceContext(new StandardPricingStrategy());
     }
 
     @Override
@@ -55,18 +45,11 @@ public class Invoice implements OrderBuilder {
     @Override
     public OrderBuilder buildPrice(double price) {
         order.setTotalPrice(order.getCustomer().checkDiscount(order.getCustomer(), price));
-        //order.setTotalPrice( price);
-
-//        order.setTotalPrice(priceContext.executePricingStrategy(order.getGarment().getType(), meter, order.getFabric().getMaterial()));
-        //order.setTotalPrice(order.getCustomer().checkDiscount(order.getCustomer(), priceContext.executePricingStrategy(order.getGarment().getType(), meter, order.getFabric().getMaterial())));
         return this;
     }
 
     @Override
     public Order buildOrder() {
-        Order builtOrder = this.order;
-        //this.order = new Order();
-        //return builtOrder;
-        return order;
+        return this.order;
     }
 }
