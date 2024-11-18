@@ -46,11 +46,14 @@ public class TailorSystemFacade {
 
     public void addCustomer() {
         customerService.addCustomer();
-    }
+    } 
+    
+    public void calculatePricing(){
+         Pricingsevice.calculatePricing();
+     }
+    
     public void calculateDeliveryDate(){
         deliveryDateSevice.calculateDeliveryDate();
     }
-     public void calculatePricing(){
-         Pricingsevice.calculatePricing();
-     }
+    
 }

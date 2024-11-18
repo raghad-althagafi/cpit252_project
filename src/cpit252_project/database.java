@@ -38,11 +38,10 @@ public class database {
     String createDatabase = "CREATE DATABASE IF NOT EXISTS TailorSystem";
     
     //connect to mySql server
-    try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306", "root", "raghad");
+    try (Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306", "root", "Rafa2003");
              Statement st = conn.createStatement()) {
             // Execute statement to create the database
             st.executeUpdate(createDatabase);
-            System.out.println("Database created if not exists.");
         } catch (SQLException s) {
             System.out.println("SQL statement for database creation is not executed!");
         }
@@ -56,8 +55,7 @@ public class database {
         try {
             //Set the connection to KAU_EVENTS DB
             String connectionURL = "jdbc:mysql://localhost:3306/TailorSystem";
-            con = DriverManager.getConnection(connectionURL, "root", "raghad");
-            System.out.println("Connected to the database.");
+            con = DriverManager.getConnection(connectionURL, "root", "Rafa2003");
         } catch (SQLException s) {
             System.out.println("SQL statement for connecting to the database is not executed!");
         }
@@ -76,7 +74,6 @@ public class database {
         try(Statement st = con.createStatement()){
             //create users table
             st.executeUpdate(usersTable);
-            System.out.println("user table created");
         }
         catch (SQLException s){
          System.out.println("SQL statement is not executed!");
@@ -110,7 +107,6 @@ public class database {
             
             //if user not found
             else{
-                System.out.println("User not found");
                 return false;
             }
         }
@@ -120,6 +116,8 @@ public class database {
         
         return false;
     }
+
+   
      
 }
     

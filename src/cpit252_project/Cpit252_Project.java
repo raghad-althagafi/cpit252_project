@@ -36,9 +36,9 @@ public class Cpit252_Project {
         //-------------------------
         //Facade 
         //Login
-//        database db = new database();
-//        db.addSampleEvents();
-//
+        database db = new database();
+        //db.addSampleEvents(); never use
+
          Scanner input = new Scanner(System.in);
          System.out.println("Enter the username");
          String user = input.next();

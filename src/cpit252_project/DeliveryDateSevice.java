@@ -37,6 +37,7 @@ public class DeliveryDateSevice {
 
         deliveryDate = deliveryDateCalculator.calculateDeliveryDate(expectedProductionDays);
         System.out.println("Delivery Date: " + deliveryDate);
+        
     }
 
     public LocalDate getDeliveryDate() {
