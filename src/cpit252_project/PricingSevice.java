@@ -39,7 +39,7 @@ public class PricingSevice {
 
         // Select the appropriate pricing strategy
         PricingStrategy pricingStrategy = isUrgent
-                ? new UrgentPricingStrategy(new UrgentDateDecorator(null, 2)) // Decorator for urgency
+                ? new UrgentPricingStrategy() // No decorator needed
                 : new StandardPricingStrategy();
 
         // Create Price Context and calculate final price
